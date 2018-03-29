@@ -1,0 +1,38 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Deliver",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "full_version": "",
+                                    "package": "[$ initiator['package_revision']['name'] $]",
+                                    "revision": "[$ initiator['package_revision']['revision'] $]"
+                                },
+                                "label": "Flow - Package - Deliver Revision",
+                                "method": "deliver",
+                                "module": "package",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

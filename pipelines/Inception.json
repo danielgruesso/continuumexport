@@ -1,0 +1,39 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Inception",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "group": "master",
+                                    "pipeline": "Utility",
+                                    "project": "auth service",
+                                    "start_now": "false"
+                                },
+                                "label": "Flow - Pipeline - Initiate",
+                                "method": "initiate",
+                                "module": "pipeline",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

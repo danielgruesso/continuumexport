@@ -1,0 +1,40 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "GitHub",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "branch_name": "branch02",
+                                    "instance_name": "",
+                                    "repository": "continuum",
+                                    "source": "master"
+                                },
+                                "label": "GitHub - Create Branch",
+                                "method": "create_branch",
+                                "module": "main",
+                                "name": "github",
+                                "type": "external"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

@@ -1,0 +1,96 @@
+{
+    "actions": [
+        {
+            "args": {},
+            "icon": "",
+            "isOpen": true,
+            "name": "New Item",
+            "parameters": [
+                {
+                    "name": "i_am_not_required",
+                    "required": "false",
+                    "values": [
+                        "bar"
+                    ]
+                },
+                {
+                    "name": "pick_one",
+                    "present_as": "dropdown",
+                    "values": [
+                        "true",
+                        "false"
+                    ]
+                },
+                {
+                    "name": "a_list",
+                    "present_as": "list",
+                    "values": [
+                        "one",
+                        "two"
+                    ]
+                }
+            ],
+            "tags": [
+                ""
+            ],
+            "task": "",
+            "type": "task",
+            "version": ""
+        }
+    ],
+    "artifacts": [],
+    "description": "",
+    "globals": {},
+    "last_cijob_number": 3,
+    "mappings": [],
+    "name": "continuum",
+    "notifications": {
+        "email": {
+            "addresses": ""
+        },
+        "enable": false,
+        "hipchat": {
+            "room": ""
+        },
+        "http": {
+            "data": "",
+            "url": ""
+        },
+        "on_failure": [],
+        "on_start": [],
+        "on_success": [],
+        "on_wait": [],
+        "slack": {
+            "channel": ""
+        }
+    },
+    "source": {
+        "directives": [
+            {
+                "always": "",
+                "details": {
+                    "always": "",
+                    "args": {},
+                    "clone": "true",
+                    "command": "build/buildworker.sh __PROJECTVERSION.$CI_JOB_NUMBER https://s3.amazonaws.com/versionone-builds/continuum/thirdparty/thirdparty-261.tgz",
+                    "command_timeout": "",
+                    "on_error": "Continue Processing Directives",
+                    "plugin_instance": "",
+                    "shared_workspace": "true",
+                    "wait_for_completion": "true"
+                },
+                "type": "worker_ci",
+                "when": "always"
+            }
+        ],
+        "enable_polling": false,
+        "group_source": "branch",
+        "interface": "webhook",
+        "notify_unmanaged": false,
+        "notify_unmanaged_addl": "",
+        "repo_name": "",
+        "repo_server": "",
+        "type": "github"
+    },
+    "type": "Source"
+}

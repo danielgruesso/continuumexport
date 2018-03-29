@@ -1,0 +1,44 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Bamboo",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "build_id": "",
+                                    "expand": "",
+                                    "inherit": "true",
+                                    "instance_name": "",
+                                    "params": "",
+                                    "result_key": "",
+                                    "revision": "",
+                                    "wait": "true"
+                                },
+                                "label": "Bamboo - Build",
+                                "method": "build",
+                                "module": "job",
+                                "name": "bamboo",
+                                "type": "external"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

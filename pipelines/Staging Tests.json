@@ -1,0 +1,51 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Staging Tests",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "message": "Staging Tests"
+                                },
+                                "label": "Utility - Log",
+                                "method": "insert_log",
+                                "module": "utility",
+                                "name": "utility"
+                            },
+                            "when": "always"
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "control": "Staging Tests Successful",
+                                    "details": "",
+                                    "result": "pass"
+                                },
+                                "label": "Flow - Package - Set Activity Control",
+                                "method": "set_activity_control",
+                                "module": "package",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

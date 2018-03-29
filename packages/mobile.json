@@ -1,0 +1,211 @@
+{
+    "actions": [],
+    "artifacts": [],
+    "description": "",
+    "globals": {},
+    "name": "mobile",
+    "progression": {
+        "name": "E-Store",
+        "phases": [
+            {
+                "autopromote": true,
+                "delivery_category": "Developing",
+                "directives": [
+                    {
+                        "category": "va",
+                        "controls": [
+                            {
+                                "description": "The build has finished successfully",
+                                "details": {},
+                                "index": "0",
+                                "name": "Build Successful",
+                                "required": false
+                            }
+                        ],
+                        "description": "Run Jenkins Build",
+                        "details": {
+                            "definition": "Build",
+                            "group": "",
+                            "initial_data": {},
+                            "project": "mobile"
+                        },
+                        "estimated_touch_time": "1",
+                        "index": "0",
+                        "interactive": false,
+                        "name": "Build",
+                        "type": "initiate_pipeline"
+                    }
+                ],
+                "name": "Building"
+            },
+            {
+                "autopromote": true,
+                "delivery_category": "Developing",
+                "directives": [
+                    {
+                        "category": "nva_necessary",
+                        "controls": [
+                            {
+                                "description": "Automated tests finished and are 100% passing",
+                                "details": {},
+                                "index": "0",
+                                "name": "Automated Tests Successful",
+                                "required": false
+                            }
+                        ],
+                        "description": "Run Jenkins Testing Job",
+                        "details": {
+                            "definition": "Automated Tests",
+                            "group": "",
+                            "initial_data": {},
+                            "project": "mobile"
+                        },
+                        "estimated_touch_time": "1",
+                        "index": "0",
+                        "interactive": false,
+                        "name": "Automated Testing",
+                        "type": "initiate_pipeline"
+                    },
+                    {
+                        "category": "quality",
+                        "controls": [
+                            {
+                                "description": "Manual tests performed and score is greater than 95%",
+                                "details": {},
+                                "index": "0",
+                                "name": "Manual Tests Successful",
+                                "required": false
+                            }
+                        ],
+                        "description": "Run all manual tests",
+                        "details": {
+                            "assignto": [
+                                "administrator"
+                            ],
+                            "reason_required": false,
+                            "tags": [],
+                            "text": "Please enter manual tests results",
+                            "title": "Manual Tests"
+                        },
+                        "estimated_touch_time": "4",
+                        "index": "1",
+                        "interactive": true,
+                        "name": "Manual Tests",
+                        "type": "manual_activity"
+                    }
+                ],
+                "name": "Testing"
+            },
+            {
+                "autopromote": true,
+                "delivery_category": "Developing",
+                "directives": [
+                    {
+                        "category": "va",
+                        "controls": [
+                            {
+                                "description": "Staging tests finished and are 100% passing",
+                                "details": {},
+                                "index": "0",
+                                "name": "Staging Tests Successful",
+                                "required": false
+                            }
+                        ],
+                        "description": "Run Jenkins Staging Test Job",
+                        "details": {
+                            "definition": "Staging Tests",
+                            "group": "",
+                            "initial_data": {},
+                            "project": "mobile"
+                        },
+                        "estimated_touch_time": "",
+                        "index": "0",
+                        "interactive": false,
+                        "name": "Staging Tests",
+                        "type": "initiate_pipeline"
+                    }
+                ],
+                "name": "Staging"
+            },
+            {
+                "autopromote": false,
+                "delivery_category": "Packaged",
+                "directives": [
+                    {
+                        "category": null,
+                        "controls": [
+                            {
+                                "description": "PM has entered release notes",
+                                "details": {},
+                                "index": "0",
+                                "name": "Release Notes Delivered",
+                                "required": false
+                            }
+                        ],
+                        "description": "PM to produce release notes",
+                        "details": {
+                            "assignto": [
+                                "administrator"
+                            ],
+                            "reason_required": false,
+                            "tags": [],
+                            "text": "Please paste release notes below",
+                            "title": "Release Notes"
+                        },
+                        "estimated_touch_time": "4",
+                        "index": "0",
+                        "interactive": true,
+                        "name": "Release Notes",
+                        "type": "manual_activity"
+                    },
+                    {
+                        "category": "nva_necessary",
+                        "controls": [
+                            {
+                                "description": "",
+                                "details": {},
+                                "index": "0",
+                                "name": "Deliver to Production",
+                                "required": false
+                            }
+                        ],
+                        "description": "Signals the production delivery pipeline",
+                        "details": {
+                            "assignto": [
+                                "administrator"
+                            ],
+                            "reason_required": false,
+                            "tags": [],
+                            "text": "Delivery the package revision to production environment",
+                            "title": "Deliver to Production"
+                        },
+                        "directives": [
+                            {
+                                "category": null,
+                                "controls": [],
+                                "description": "Deliver the release to production",
+                                "details": {
+                                    "definition": "Deliver",
+                                    "group": "",
+                                    "initial_data": {},
+                                    "project": "mobile"
+                                },
+                                "estimated_touch_time": "",
+                                "index": "1_0",
+                                "interactive": false,
+                                "name": "Deliver",
+                                "type": "initiate_pipeline"
+                            }
+                        ],
+                        "estimated_touch_time": "",
+                        "index": "1",
+                        "interactive": true,
+                        "name": "Deliver to Production",
+                        "type": "manual_activity"
+                    }
+                ],
+                "name": "Ready for Delivery"
+            }
+        ]
+    }
+}

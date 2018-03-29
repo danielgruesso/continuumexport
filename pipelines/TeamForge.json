@@ -1,0 +1,61 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "TeamForge",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "artifact": "artf1837",
+                                    "field_name": "status",
+                                    "field_value": "Pending",
+                                    "folder_type": "",
+                                    "instance_name": "",
+                                    "result_key": "results"
+                                },
+                                "label": "TeamForge - Update Artifact",
+                                "method": "set_flex_fields",
+                                "module": "trackerapp",
+                                "name": "teamforgeplugin"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "artifact": "artf1837",
+                                    "instance_name": "",
+                                    "result_key": "artifact"
+                                },
+                                "label": "TeamForge - Get Artifact",
+                                "method": "get_issue",
+                                "module": "trackerapp",
+                                "name": "teamforgeplugin"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

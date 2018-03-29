@@ -1,0 +1,98 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Build",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "artifact_name": "",
+                                    "artifact_regex": "",
+                                    "inherit": "true",
+                                    "instance_name": "",
+                                    "job": "Mobile App",
+                                    "result_key": "BuildResults",
+                                    "wait": "true"
+                                },
+                                "label": "Jenkins - Build",
+                                "method": "build",
+                                "module": "job",
+                                "name": "jenkins",
+                                "type": "external"
+                            },
+                            "when": "always"
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "artifact_location": "",
+                                    "artifact_name": "[$ projectglobals[\"artifactName\"] $]",
+                                    "artifact_version": "[$ projectglobals['version'] $].[$ BuildResults['build'] $]",
+                                    "branch": "__GROUP",
+                                    "build_details": "",
+                                    "build_id": "[$ BuildResults['build'] $]",
+                                    "build_url": "[$ BuildResults['url'] $]",
+                                    "package_name": "[$ initiator['package_revision']['name'] $]",
+                                    "package_revision": "[$ initiator['package_revision']['revision'] $]",
+                                    "project_name": "__PROJECTNAME"
+                                },
+                                "label": "Flow - Artifact - New Revision",
+                                "method": "register_artifact",
+                                "module": "pipeline",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "full_version": "",
+                                    "new_full_version": "[$ projectglobals['version'] $],[$ BuildResults['build'] $]",
+                                    "new_version": "[$ projectglobals['version'] $]",
+                                    "package": "[$ initiator['package_revision']['name'] $]",
+                                    "revision": "[$ initiator['package_revision']['revision'] $]"
+                                },
+                                "label": "Flow - Package - Rewrite Version",
+                                "method": "reversion",
+                                "module": "package",
+                                "name": "flow"
+                            },
+                            "when": "conditionally",
+                            "when_condition": "BuildResults['details']['result'] != \"FAILURE\""
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "control": "Build Successful",
+                                    "details": "",
+                                    "result": "[$ \"pass\" if \"[$ BuildResults['details']['result'] $]\" == \"SUCCESS\" else \"fail\" $]"
+                                },
+                                "label": "Flow - Package - Set Activity Control",
+                                "method": "set_activity_control",
+                                "module": "package",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

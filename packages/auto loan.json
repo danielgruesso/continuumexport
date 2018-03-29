@@ -1,0 +1,70 @@
+{
+    "actions": [],
+    "artifacts": [],
+    "description": "",
+    "globals": {},
+    "name": "auto loan",
+    "progression": {
+        "name": "auth service",
+        "phases": [
+            {
+                "autopromote": false,
+                "delivery_category": "Developing",
+                "directives": [
+                    {
+                        "category": null,
+                        "controls": [],
+                        "description": "",
+                        "details": {
+                            "definition": "",
+                            "group": "",
+                            "initial_data": {},
+                            "project": ""
+                        },
+                        "estimated_touch_time": "",
+                        "index": "0",
+                        "interactive": false,
+                        "name": "Activity One",
+                        "type": "initiate_pipeline"
+                    },
+                    {
+                        "category": null,
+                        "controls": [],
+                        "description": "",
+                        "details": {
+                            "assignto": [],
+                            "reason_required": false,
+                            "tags": [],
+                            "text": "",
+                            "title": ""
+                        },
+                        "estimated_touch_time": "",
+                        "index": "1",
+                        "interactive": true,
+                        "name": "Manual Activity",
+                        "type": "manual_activity"
+                    }
+                ],
+                "name": "Manual Test"
+            },
+            {
+                "autopromote": false,
+                "delivery_category": "Developing",
+                "directives": [],
+                "name": "Automated Test"
+            },
+            {
+                "autopromote": false,
+                "delivery_category": "Packaged",
+                "directives": [],
+                "name": "Staging"
+            },
+            {
+                "autopromote": false,
+                "delivery_category": "Packaged",
+                "directives": [],
+                "name": "Canary"
+            }
+        ]
+    }
+}

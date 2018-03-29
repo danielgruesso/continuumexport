@@ -1,0 +1,75 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Jenkins",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "artifact_name": "",
+                                    "artifact_regex": "",
+                                    "inherit": "true",
+                                    "instance_name": "",
+                                    "job": "ContinuumGenericTest",
+                                    "result_key": "BuildResults",
+                                    "wait": "true"
+                                },
+                                "label": "Jenkins - Build",
+                                "method": "build",
+                                "module": "job",
+                                "name": "jenkins",
+                                "type": "external"
+                            },
+                            "when": "always"
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "delivery_category": "Developing",
+                                    "description": "",
+                                    "environment_name": "",
+                                    "status": "inactive"
+                                },
+                                "label": "Flow - Environment - Update Details",
+                                "method": "update_details",
+                                "module": "environment",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "group": "",
+                                    "pipeline": "Jenkins",
+                                    "project": "auth service",
+                                    "start_now": "false"
+                                },
+                                "label": "Flow - Pipeline - Initiate",
+                                "method": "initiate",
+                                "module": "pipeline",
+                                "name": "flow"
+                            },
+                            "when": "never"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

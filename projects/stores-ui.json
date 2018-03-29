@@ -1,0 +1,100 @@
+{
+    "actions": [],
+    "artifacts": [
+        {
+            "_id": "5a5fbdd92979931aa8d14673",
+            "created_dt": "2018-01-17T21:19:21.171000",
+            "name": "stores",
+            "project_id": "5a5fbdd92979931aa8d14671",
+            "project_name": "stores-ui"
+        },
+        {
+            "_id": "5a5fbdd92979931aa8d14674",
+            "created_dt": "2018-01-17T21:19:21.172000",
+            "name": "stores-docker",
+            "project_id": "5a5fbdd92979931aa8d14671",
+            "project_name": "stores-ui"
+        },
+        {
+            "_id": "5a5fbdd92979931aa8d14675",
+            "created_dt": "2018-01-17T21:19:21.172000",
+            "last_revision": 0,
+            "name": "stores-ui",
+            "project_id": "5a5fbdd92979931aa8d14671",
+            "project_name": "stores-ui"
+        }
+    ],
+    "description": "",
+    "globals": {
+        "jenkins_job": "stores-ui"
+    },
+    "lifecycle": "demo progression",
+    "mappings": [],
+    "name": "stores-ui",
+    "notifications": {
+        "email": {
+            "addresses": ""
+        },
+        "enable": false,
+        "hipchat": {
+            "room": ""
+        },
+        "http": {
+            "data": "",
+            "url": ""
+        },
+        "on_failure": [],
+        "on_start": [],
+        "on_success": [],
+        "on_wait": [],
+        "slack": {
+            "channel": ""
+        }
+    },
+    "source": {
+        "directives": [
+            {
+                "details": {
+                    "args": {},
+                    "instance_name": "",
+                    "on_error": "continue"
+                },
+                "type": "lifecycle_workitem_lookup",
+                "when": "always"
+            },
+            {
+                "details": {
+                    "package_name": "webstore",
+                    "phase": "Acceptance Test",
+                    "use_as_version": "lookup",
+                    "use_as_version_lookup": "[$ _package_version $]"
+                },
+                "evaluate": "\"_fake\" in __DATA",
+                "type": "package_revision",
+                "when": "evaluate"
+            },
+            {
+                "details": {
+                    "package_name": "webstore",
+                    "phase": "Build",
+                    "use_as_version": "branch",
+                    "use_as_version_lookup": ""
+                },
+                "evaluate": "\"_fake\" not in __DATA",
+                "type": "package_revision",
+                "when": "evaluate"
+            }
+        ],
+        "enable_polling": false,
+        "group_source": "branch",
+        "interface": "webhook",
+        "notify_unmanaged": false,
+        "notify_unmanaged_addl": "",
+        "repo_name": "",
+        "repo_server": "",
+        "type": "gitlab"
+    },
+    "type": "Source",
+    "version": "1.56",
+    "version_date": "2016-04-18 17:47:30"
+}

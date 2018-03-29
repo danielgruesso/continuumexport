@@ -1,0 +1,77 @@
+{
+    "actions": [],
+    "artifacts": [
+        {
+            "_id": "5a7dd1ce2979930f0149735f",
+            "created_dt": "2018-02-09T16:52:30.825000",
+            "last_revision": 44,
+            "last_revision_dt": "2018-03-16T17:22:55.231000",
+            "name": "mobile app",
+            "project_id": "5a7cadf22979930f01497318",
+            "project_name": "mobile"
+        }
+    ],
+    "description": "",
+    "globals": {
+        "artifactName": "mobile app",
+        "buildJobName": "JenkinsBuild",
+        "buildJobServer": "Jenkins",
+        "version": "1.0"
+    },
+    "mappings": [],
+    "name": "mobile",
+    "notifications": {
+        "email": {
+            "addresses": ""
+        },
+        "enable": false,
+        "hipchat": {
+            "room": ""
+        },
+        "http": {
+            "data": "",
+            "url": ""
+        },
+        "on_failure": [],
+        "on_start": [],
+        "on_success": [],
+        "on_wait": [],
+        "slack": {
+            "channel": ""
+        }
+    },
+    "source": {
+        "directives": [
+            {
+                "details": {
+                    "args": {},
+                    "instance_name": "",
+                    "on_error": "Continue Processing Directives"
+                },
+                "type": "lifecycle_workitem_lookup",
+                "when": "always"
+            },
+            {
+                "details": {
+                    "package_name": "mobile",
+                    "phase": "Building",
+                    "use_as_version": "lookup",
+                    "use_as_version_lookup": "[$ base_ref $]"
+                },
+                "type": "package_revision",
+                "when": "always"
+            }
+        ],
+        "enable_polling": false,
+        "group_source": "branch",
+        "interface": "webhook",
+        "notify_unmanaged": false,
+        "notify_unmanaged_addl": "",
+        "repo_name": "",
+        "repo_server": "",
+        "type": "github"
+    },
+    "type": "Source",
+    "version": "1.0",
+    "version_date": "2018-02-08 20:09:44"
+}

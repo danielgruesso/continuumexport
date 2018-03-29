@@ -1,0 +1,39 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Deactivate Environment",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "environment": "",
+                                    "full_version": "",
+                                    "package": "",
+                                    "revision": ""
+                                },
+                                "label": "Flow - Package - Deactivate Environment",
+                                "method": "deactivate_deployed_environment_from_package_revision",
+                                "module": "package",
+                                "name": "flow"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

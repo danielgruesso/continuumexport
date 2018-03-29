@@ -1,0 +1,50 @@
+{
+    "Category": null,
+    "Code": "001",
+    "Codeblocks": [
+        {
+            "Name": "MAIN",
+            "Steps": [
+                {
+                    "Codeblock": "MAIN",
+                    "Commented": false,
+                    "Description": "",
+                    "FunctionDefinition": {
+                        "__name": "send_email",
+                        "bcc": {
+                            "bcc": ""
+                        },
+                        "body": {
+                            "body": "<html>\nThank you for your cooperation and your 2\u00a2.\n<br/>\n\u00bfA que hora lleg\u00f3 la cig\u00fce\u00f1a con el b\u00e9b\u00e9?\n<br/>\nPlease send \u00a535000000 to La\u00e7asta Pap\u00e1.\n<br/>\nThe Continuum Collective\u2122\n</html>"
+                        },
+                        "cc": {
+                            "cc": ""
+                        },
+                        "subject": {
+                            "subject": "This is your test email \u00a1bravo!"
+                        },
+                        "to": {
+                            "to": "daniel.gruesso@versionone.com"
+                        }
+                    },
+                    "FunctionName": "send_email",
+                    "OutputColumnDelimiter": 0,
+                    "OutputParseType": 0,
+                    "OutputRowDelimiter": 0
+                }
+            ]
+        }
+    ],
+    "ConcurrentInstances": null,
+    "Description": "Tests email functionality",
+    "IsDefaultVersion": true,
+    "MaxVersion": "1.000",
+    "Name": "SMTP Test",
+    "NextMajorVersion": "2.000",
+    "NextMinorVersion": "1.001",
+    "NumberOfApprovedVersions": 0,
+    "Parameters": [],
+    "QueueDepth": null,
+    "Status": "Development",
+    "Version": "1.000"
+}

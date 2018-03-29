@@ -1,0 +1,40 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Bitbucket",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "branch_name": "branch002",
+                                    "instance_name": "",
+                                    "project": "continuum",
+                                    "repository": "continuum",
+                                    "source_branch": "master"
+                                },
+                                "label": "BitBucket Cloud - Create Branch",
+                                "method": "create_branch",
+                                "module": "bitbucket",
+                                "name": "bitbucket"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

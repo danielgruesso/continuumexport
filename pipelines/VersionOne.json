@@ -1,0 +1,42 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "VersionOne",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "broid_target_key": "",
+                                    "build_project": "",
+                                    "initial_status": "In Progress",
+                                    "instance_name": "",
+                                    "name": "",
+                                    "reference": ""
+                                },
+                                "label": "VersionOne - Create Pipeline Run",
+                                "method": "create_buildrun",
+                                "module": "main",
+                                "name": "v1plugin",
+                                "type": "external"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}

@@ -1,0 +1,71 @@
+{
+    "actions": [],
+    "artifacts": [],
+    "description": "",
+    "globals": {},
+    "name": "auth service",
+    "progression": {
+        "name": "auth service",
+        "phases": [
+            {
+                "autopromote": true,
+                "delivery_category": "Developing",
+                "directives": [
+                    {
+                        "category": "quality",
+                        "controls": [
+                            {
+                                "description": "",
+                                "details": {},
+                                "index": "0",
+                                "name": "ADA Vision Tests > 80%",
+                                "required": false
+                            },
+                            {
+                                "description": "",
+                                "details": {},
+                                "index": "1",
+                                "name": "ADA Audio Tests > 90%",
+                                "required": false
+                            }
+                        ],
+                        "description": "Run full ADA suite",
+                        "details": {
+                            "assignto": [
+                                "developer"
+                            ],
+                            "reason_required": true,
+                            "tags": [],
+                            "text": "Enter score for ADA tests",
+                            "title": "ADA Tests"
+                        },
+                        "estimated_touch_time": "4",
+                        "index": "0",
+                        "interactive": true,
+                        "name": "ADA Tests",
+                        "type": "manual_activity"
+                    }
+                ],
+                "name": "Manual Test"
+            },
+            {
+                "autopromote": true,
+                "delivery_category": "Developing",
+                "directives": [],
+                "name": "Automated Test"
+            },
+            {
+                "autopromote": true,
+                "delivery_category": "Packaged",
+                "directives": [],
+                "name": "Staging"
+            },
+            {
+                "autopromote": false,
+                "delivery_category": "Packaged",
+                "directives": [],
+                "name": "Canary"
+            }
+        ]
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "actions": [],
+    "artifacts": [
+        {
+            "_id": "5a60c1f029799305297d6af9",
+            "created_dt": "2018-01-18T15:49:04.467000",
+            "name": "auth service - license",
+            "project_id": "5a60c0ee29799305297d6ae7",
+            "project_name": "auth service"
+        },
+        {
+            "_id": "5a60c26c29799305297d6b06",
+            "created_dt": "2018-01-18T15:51:08.482000",
+            "last_revision": 2,
+            "last_revision_dt": "2018-01-18T15:52:01.375000",
+            "name": "license",
+            "project_id": "5a60c0ee29799305297d6ae7",
+            "project_name": "auth service"
+        }
+    ],
+    "description": "",
+    "globals": {},
+    "mappings": [],
+    "name": "auth service",
+    "notifications": {
+        "email": {
+            "addresses": "daniel.gruesso@versionone.com"
+        },
+        "enable": true,
+        "hipchat": {
+            "room": ""
+        },
+        "http": {
+            "data": "",
+            "url": ""
+        },
+        "on_failure": [
+            "email",
+            "slack"
+        ],
+        "on_start": [
+            "email",
+            "slack"
+        ],
+        "on_success": [
+            "email",
+            "slack"
+        ],
+        "on_wait": [
+            "email",
+            "slack"
+        ],
+        "slack": {
+            "channel": "#testchannel"
+        }
+    },
+    "source": {
+        "directives": [
+            {
+                "details": {
+                    "args": {},
+                    "instance_name": "",
+                    "on_error": "Continue Processing Directives"
+                },
+                "type": "lifecycle_workitem_lookup",
+                "when": "always"
+            },
+            {
+                "details": {
+                    "package_name": "auth service",
+                    "phase": "Manual Test",
+                    "use_as_version": "lookup",
+                    "use_as_version_lookup": "[$ base_ref $]"
+                },
+                "type": "package_revision",
+                "when": "always"
+            }
+        ],
+        "enable_polling": false,
+        "group_source": "branch",
+        "interface": "webhook",
+        "notify_unmanaged": false,
+        "notify_unmanaged_addl": "",
+        "repo_name": "",
+        "repo_server": "",
+        "type": "github"
+    },
+    "type": "Source"
+}

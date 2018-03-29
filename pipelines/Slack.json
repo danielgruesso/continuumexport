@@ -1,0 +1,53 @@
+{
+    "actions": "",
+    "category": "General",
+    "dependencies": [],
+    "description": "",
+    "globals": {},
+    "interactive": false,
+    "name": "Slack",
+    "phases": [
+        {
+            "name": "",
+            "stages": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "message": "The original slack pipeline"
+                                },
+                                "label": "Utility - Log",
+                                "method": "insert_log",
+                                "module": "utility",
+                                "name": "utility"
+                            },
+                            "when": "always"
+                        },
+                        {
+                            "name": "",
+                            "plugin": {
+                                "args": {
+                                    "as_user": "",
+                                    "attachments": "",
+                                    "channel": "#testchannel",
+                                    "failonerror": "true",
+                                    "message": "hello world"
+                                },
+                                "label": "Slack - Post Message",
+                                "method": "post",
+                                "module": "chat",
+                                "name": "slackplugin"
+                            },
+                            "when": "always"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "pipelineglobals": {},
+    "summary": []
+}
